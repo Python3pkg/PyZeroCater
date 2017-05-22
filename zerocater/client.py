@@ -23,7 +23,7 @@ class ZeroCaterClient(object):
 
     def _build_url(self, url, **kwargs):
         url = re.sub(r'\{\?.+\}', '', url) # Take out optional GET params
-        for kwarg in kwargs.iterkeys():
+        for kwarg in kwargs.keys():
             # Replace all kwargs
             url = url.replace('{%s}' % (kwarg), kwargs[kwarg])
         return '%s' % (url,)
